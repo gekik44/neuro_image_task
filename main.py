@@ -8,9 +8,9 @@ app = Flask(__name__)
 def index():
     return render_template("index.html", title="start")
 
-@app.route("/carousel")
-def carousel_page():
-    return render_template("carousel.html", title="carousel")
+@app.route("/img_converter")
+def img_converter():
+    return render_template("img_converter.html", title="converter")
 
 
 if __name__ == '__main__':
