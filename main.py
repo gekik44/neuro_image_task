@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def start_page():
-    return render_template("start.html", title="start")
+def index():
+    return render_template("index.html", title="start")
 
 @app.route("/carousel")
 def carousel_page():
