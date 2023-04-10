@@ -2,5 +2,17 @@ body {
     background: url('/static/img/back.jpg') no-repeat center top;
 	background-size: cover;
 }
+.btn {
+	display: block;
+	font-size: 17px;
+	color:white;
+	text-align: center;
+    font-family: 'Montserrat';
+    background: #A15DB9;
+	padding: 17px 30px;
+	width: 238px;
+	transition: all 0.5s ease;
+	margin: auto;
+}
 
 
