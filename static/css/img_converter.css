@@ -1,5 +1,6 @@
 body{
     background-color: #D0B8A8;
+    margin: 0;
 }
 h2 {
     color: black;
@@ -7,14 +8,14 @@ h2 {
     font-weight: 600;
     font-size: 35px;
     margin-top: 50px;
-    padding-left: 20px;
+
 }
 h3 {
     color: black;
     font-family: 'Montserrat';
     font-size: 15px;
     margin-top: 10px;
-    padding-left: 20px;
+
 }
 [type=checkbox] {
   display: none;
@@ -24,23 +25,50 @@ h3 {
   border: 1px solid white;
 }
 .btn {
-	display: block;
+    color: white;
 	font-size: 17px;
-	color:black;
     font-family: 'Montserrat';
     text-align: center;
 	padding: 17px 30px;
-	width: 238px;
-	border: 1px solid black;
+	width: 460px;
+	border-radius: 0;
 	transition: all 0.5s ease;
 	margin-top: 20px;
-	margin-left: 20px;
-
 }
-.btn:hover {
+.sec_btn{
+    border: 2px solid white;
+}
+.sec_btn:hover {
 	background: white;
     color: black;
 }
-.right{
-    margin-left: 850px;
+
+.main_btn{
+	font-weight: 600;
+    text-align: center;
+	background: #A15DB9;
+}
+#primary{
+    margin-bottom: 100px;
+}
+
+.main_btn:hover {
+	background: white;
+    color: black;
+}
+.col-5 {
+  text-align: center;
+}
+/*
+#prim2{
+    width: 510px;
+}
+#sec2{
+    width: 510px;
+}
+*/
+
+#volume{
+
+    width: 460px;
 }

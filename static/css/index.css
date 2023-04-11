@@ -11,6 +11,7 @@ body {
     background: #A15DB9;
 	padding: 17px 30px;
 	width: 238px;
+	border-radius: 0;
 	transition: all 0.5s ease;
 	margin: auto;
 }

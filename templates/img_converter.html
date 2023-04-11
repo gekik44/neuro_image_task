@@ -5,68 +5,95 @@
 
 {% block main %}
 <div>
-  <h2>Art Style</h2>
-  <table>
-    <tbody>
-        <tr>
-            <td>
-              <label>
-                <input type="checkbox" />
-                <img src="static/img/1.jpg" alt="image style" />
-              </label>
-            </td>
-            <td>
-              <label>
-                <input type="checkbox" />
-                <img src="static/img/2.jpg" alt="image style" />
-              </label>
-            </td>
-            <td>
-              <label>
-                <input type="checkbox" />
-                <img src="static/img/3.jpg" alt="image style" />
-              </label>
-            </td>
-            <td>
-              <label>
-                <input type="checkbox" />
-                <img src="static/img/1.jpg" alt="image style" />
-              </label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <label>
-                <input type="checkbox" />
-                <img src="static/img/1.jpg" alt="image style" />
-              </label>
-            </td>
-            <td>
-              <label>
-                <input type="checkbox" />
-                <img src="static/img/2.jpg" alt="image style" />
-              </label>
-            </td>
-            <td>
-              <label>
-                <input type="checkbox" />
-                <img src="static/img/3.jpg" alt="image style" />
-              </label>
-            </td>
-            <td>
-              <label>
-                <input type="checkbox" />
-                <img src="static/img/1.jpg" alt="image style" />
-              </label>
-            </td>
-        </tr>
-    </tbody>
-  </table>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2>Art Style</h2>
+          <table>
+            <tbody>
+                <tr>
+                    <td>
+                      <label>
+                        <input type="checkbox" />
+                        <img src="static/img/1.jpg" alt="image style" />
+                      </label>
+                    </td>
+                    <td>
+                      <label>
+                        <input type="checkbox" />
+                        <img src="static/img/2.jpg" alt="image style" />
+                      </label>
+                    </td>
+                    <td>
+                      <label>
+                        <input type="checkbox" />
+                        <img src="static/img/3.jpg" alt="image style" />
+                      </label>
+                    </td>
+                    <td>
+                      <label>
+                        <input type="checkbox" />
+                        <img src="static/img/1.jpg" alt="image style" />
+                      </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      <label>
+                        <input type="checkbox" />
+                        <img src="static/img/1.jpg" alt="image style" />
+                      </label>
+                    </td>
+                    <td>
+                      <label>
+                        <input type="checkbox" />
+                        <img src="static/img/2.jpg" alt="image style" />
+                      </label>
+                    </td>
+                    <td>
+                      <label>
+                        <input type="checkbox" />
+                        <img src="static/img/3.jpg" alt="image style" />
+                      </label>
+                    </td>
+                    <td>
+                      <label>
+                        <input type="checkbox" />
+                        <img src="static/img/1.jpg" alt="image style" />
+                      </label>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+          <h2>Input Image</h2>
+          <h3>Suggested input images</h3>
+          <label>
+              <input type="checkbox" />
+              <img src="static/img/2.jpg" alt="image style" />
+          </label>
+          <label>
+              <input type="checkbox" />
+              <img src="static/img/1.jpg" alt="image style" />
+          </label>
+          <label>
+              <input type="checkbox" />
+              <img src="static/img/3.jpg" alt="image style" />
+          </label>
+          <a href="#" class="btn sec_btn">Upload your image</a>
+          <h2>Adjust Influence</h2>
+          <div>
+            <input type="range" id="volume" min="0" max="50" step="1">
+          </div>
+          <a href="#" class="btn main_btn" id="primary">CREATE</a>
+        </div>
+        <div class="col-5">
+          <h2>Art Preview</h2>
+          <img src="static/img/preview.jpg" width="460" height="700" alt="preview" />
+          <a href="#" class="btn main_btn" id="prim2">DOWNLOAD</a>
+          <a href="#" class="btn sec_btn" id="sec2">SHARE ON SOCIAL MEDIA</a>
+        </div>
+      </div>
+    </div>
 
-    <h2>Input Image</h2>
-    <h3>Suggested input images</h3>
-    <a href="#" class="btn">Upload your image</a>
-    <h2>Adjust Influence</h2>
-    <h2 class="right">Art Preview</h2>
 </div>
 {% endblock %}
