@@ -5,6 +5,7 @@
 
 {% block main %}
 <div>
+  <form method="post">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -14,13 +15,14 @@
                 <tr>
                     <td>
                       <label>
-                        <input type="checkbox" />
-                        <img src="static/img/1.jpg" alt="image style" />
+                        <input type="checkbox" name="image_style_1"/>
+                        <img src="static/img/1.jpg" alt="image style"/>
                       </label>
+
                     </td>
                     <td>
                       <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" name="image_style_2"/>
                         <img src="static/img/2.jpg" alt="image style" />
                       </label>
                     </td>
@@ -58,7 +60,7 @@
                     </td>
                     <td>
                       <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" name="check"/>
                         <img src="static/img/1.jpg" alt="image style" />
                       </label>
                     </td>
@@ -84,7 +86,7 @@
           <div>
             <input type="range" id="volume" min="0" max="50" step="1">
           </div>
-          <a href="#" class="btn main_btn" id="primary">CREATE</a>
+          <button type="submit" class="btn main_btn" id="primary">CREATE</button>
         </div>
         <div class="col-5">
           <h2>Art Preview</h2>
@@ -94,6 +96,6 @@
         </div>
       </div>
     </div>
-
+  </form>
 </div>
 {% endblock %}
