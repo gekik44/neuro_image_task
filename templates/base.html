@@ -20,12 +20,39 @@
     <header id="header" class="header">
       <nav class="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="static/img/logo.png" alt="Logo" width="67" height="30" class="d-inline-block align-text-top">
-          </a>
+          <div class="row">
+            <div class="col">
+<!--              <div class="container-fluid">-->
+                <a class="navbar-brand" href="/">
+                  <img src="static/img/logo.png" alt="Logo" width="67" height="30" class="d-inline-block align-text-top">
+                </a>
+<!--              </div>-->
+            </div>
+            <div class="col">
+              <div class="box">
+		        <a class="button" href="#divOne">sing in</a>
+	          </div>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
+      <div class="overlay" id="divOne">
+		<div class="wrapper">
+			<h2 class = "textform">SIGN IN</h2><a class="close" href="#">&times;</a>
+			<div class="content">
+				<div class="container">
+					<form>
+						<label>Enter email</label>
+						<input placeholder="email" type="text">
+						<label>Enter password</label>
+						<input placeholder="password" type="text">
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+		</div>
+	  </div>
     {% block main %} {% endblock %}
   </body>
 </html>

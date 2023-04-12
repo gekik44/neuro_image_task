@@ -42,15 +42,17 @@ def load_local_image(my_image, image_size=(256, 256), preserve_aspect_ratio=True
     return img
 
 
-def convert_image(image_style):
-    content_image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Golden_Gate_Bridge_from_Battery_Spencer.jpg/640px-Golden_Gate_Bridge_from_Battery_Spencer.jpg'
+def convert_image(image_content, image_style):
+    #content_image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Golden_Gate_Bridge_from_Battery_Spencer.jpg/640px-Golden_Gate_Bridge_from_Battery_Spencer.jpg'
+    #content_image_url = "https://img.championat.com/s/735x490/news/big/p/y/devushki-v-muzhskom-sporte_15711590042025587306.jpg"
+    content_image_url = f'static/img/{image_content}'
     style_image_url = f'static/img/{image_style}'
 
     output_image_size = 384
     content_img_size = (output_image_size, output_image_size)
     style_img_size = (256, 256)  # Recommended to keep it at 256.
 
-    content_image = load_image(content_image_url, content_img_size)
+    content_image = load_local_image(content_image_url, content_img_size)
     style_image = load_local_image(style_image_url, style_img_size)
     style_image = tf.nn.avg_pool(style_image, ksize=[3,3], strides=[1,1], padding='SAME')
 

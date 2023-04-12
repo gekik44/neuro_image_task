@@ -7,6 +7,7 @@ body {
 	font-size: 17px;
 	color:white;
 	text-align: center;
+	font-weight: 600;
     font-family: 'Montserrat';
     background: #A15DB9;
 	padding: 17px 30px;
@@ -15,5 +16,8 @@ body {
 	transition: all 0.5s ease;
 	margin: auto;
 }
-
+.btn:hover {
+	background: white;
+    color: black;
+}
 

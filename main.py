@@ -16,7 +16,7 @@ def img_converter():
     elif request.method == "POST":
         print(request.form)
         if request.form['image_style_1'] == 'on':
-            convert_image("image_style_1.jpg")
+            convert_image("origin.jpg","image_style_16.jpg")
         return render_template("img_converter.html", title="converter")
 
 
