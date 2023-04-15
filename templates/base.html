@@ -12,7 +12,7 @@
 <!-- fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <title>{{ title }}</title>
     <link rel="icon" href="static/img/logo.png">
   </head>
@@ -27,45 +27,13 @@
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               </ul>
                 <form class="d-flex">
-                    <a class="button" href="#divOne" type="submit">Поиск</a>
+                    <a class="btn" id = "button" href="/authorization">Sign In</a>
                 </form>
             </div>
           </div>
         </nav>
-<!--      <nav class="navbar navbar-expand-lg">-->
-<!--        <div class="container">-->
-<!--          <div class="row">-->
-<!--            <div class="col">-->
-<!--                <a class="navbar-brand" href="/">-->
-<!--                  <img src="static/img/logo.png" alt="Logo" width="67" height="30" class="d-inline-block align-text-top">-->
-<!--                </a>-->
-<!--            </div>-->
-<!--            <div class="col">-->
-<!--              <div class="">-->
-<!--		        <a class="button my-2" href="#divOne">sing in</a>-->
-
-<!--	          </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </nav>-->
     </header>
-      <div class="overlay" id="divOne">
-		<div class="wrapper">
-			<h2 class = "textform">SIGN IN</h2><a class="close" href="#">&times;</a>
-			<div class="content">
-				<div class="container">
-					<form>
-						<label>Enter email</label>
-						<input placeholder="email" type="text">
-						<label>Enter password</label>
-						<input placeholder="password" type="text">
-						<input type="submit" value="Log in">
-					</form>
-				</div>
-			</div>
-		</div>
-	  </div>
+
     {% block main %} {% endblock %}
   </body>
 </html>
