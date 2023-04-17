@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from neuro import convert_image
+from data import db_session
+from data.users import User
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -7,13 +9,7 @@ app = Flask(__name__)
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 # db = SQLAlchemy(app)
 #
-# class Account(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     username = db.Column(db.String, primary_key=True, nullable=False)
-#     email = db.Column(db.String, primary_key=True, nullable=False)
-#     password = db.Column(db.String, nullable=False)
-#     def __repr__(self):
-#         return '<Account %r>'% self.id
+
 
 @app.route("/")
 def index():
@@ -59,6 +55,14 @@ def img_converter():
 
 
 if __name__ == '__main__':
+    db_session.global_init("db/users.db")
+    # user = User()
+    # user.username = "Gelik4na4"
+    # user.email = "1234@mail.ru"
+    # user.hashed_password = "1234"
+    # db_sess = db_session.create_session()
+    # db_sess.add(user)
+    # db_sess.commit()
     app.run(host='192.168.0.100', port=8080)
 
 
