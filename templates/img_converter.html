@@ -5,7 +5,7 @@
 
 {% block main %}
 <div>
-  <form method="post">
+  <form method="post" id="todo-form">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -14,29 +14,29 @@
             <tbody>
                 <tr>
                     <td>
-                      <label>
-                        <input type="checkbox" name="image_style_1"/>
+                      <input type="radio" id="radio-1" name="radiostyle" value="image_style_1"/>
+                      <label for="radio-1">
                         <img src="static/img/1.svg" alt="image style"/>
                       </label>
                       <h4>comic</h4>
                     </td>
                     <td>
-                      <label>
-                        <input type="checkbox" name="image_style_2"/>
+                      <input type="radio" id="radio-2" name="radiostyle" value="image_style_2"/>
+                      <label for="radio-2">
                         <img src="static/img/2.svg" alt="image style" />
                       </label>
                       <h4>cubes</h4>
                     </td>
                     <td>
-                      <label>
-                        <input type="checkbox" name="image_style_3"/>
+                      <input type="radio" id="radio-3" name="radiostyle" value="image_style_3"/>
+                      <label for="radio-3">
                         <img src="static/img/3.svg" alt="image style" />
                       </label>
                       <h4>ornament</h4>
                     </td>
                     <td>
-                      <label>
-                        <input type="checkbox" name="image_style_4"/>
+                      <input type="radio" id="radio-4" name="radiostyle" value="image_style_4"/>
+                      <label for="radio-4">
                         <img src="static/img/4.svg" alt="image style" />
                       </label>
                       <h4>sea</h4>
@@ -44,29 +44,29 @@
                 </tr>
                 <tr>
                     <td>
-                      <label>
-                        <input type="checkbox" name="image_style_5"/>
+                      <input type="radio" id="radio-5" name="radiostyle" value="image_style_5"/>
+                      <label for="radio-5">
                         <img src="static/img/5.svg" alt="image style" />
                       </label>
                       <h4>lines</h4>
                     </td>
                     <td>
-                      <label>
-                        <input type="checkbox" name="image_style_6"/>
+                      <input type="radio" id="radio-6" name="radiostyle" value="image_style_6"/>
+                      <label for="radio-6">
                         <img src="static/img/6.svg" alt="image style" />
                       </label>
                       <h4>citrus</h4>
                     </td>
                     <td>
-                      <label>
-                        <input type="checkbox" name="image_style_7"/>
+                      <input type="radio" id="radio-7" name="radiostyle" value="image_style_7"/>
+                      <label for="radio-7">
                         <img src="static/img/7.svg" alt="image style" />
                       </label>
                       <h4>random image</h4>
                     </td>
                     <td>
-                      <label>
-                        <input type="checkbox" name="image_style_8"/>
+                      <input type="radio" id="radio-8" name="radiostyle" value="image_style_8"/>
+                      <label for="radio-8">
                         <img src="static/img/8.svg" alt="image style" />
                       </label>
                       <h4>add your style</h4>
@@ -76,33 +76,56 @@
           </table>
           <h2>Input Image</h2>
           <h3>Suggested input images</h3>
-          <label>
-              <input type="checkbox" name="content_image_1"/>
+          <input type="radio" id="radio-9" name="radioimage" value="content_image_1"/>
+          <label for="radio-9">
               <img src="static/img/content1.svg" alt="image style" />
           </label>
-          <label>
-              <input type="checkbox" name="content_image_2"/>
+          <input type="radio" id="radio-10" name="radioimage" value="content_image_2"/>
+          <label for="radio-10">
               <img src="static/img/content2.svg" alt="image style" />
           </label>
-          <label>
-              <input type="checkbox" name="content_image_3"/>
+          <input type="radio" id="radio-11" name="radioimage" value="content_image_3"/>
+          <label for="radio-11">
               <img src="static/img/content3.svg" alt="image style" />
           </label>
           <a href="#" class="btn sec_btn">Upload your image</a>
           <h2>Adjust Influence</h2>
           <div>
-            <input type="range" id="volume" min="0" max="50" step="1">
+            <input type="range" id="volume" name="content_blending_ratio" min="0" max="1" step="0.01">
           </div>
-          <button type="submit" class="btn main_btn" id="primary">CREATE</button>
+          <button type="submit" class="btn main_btn" id="primary" >CREATE</button>
         </div>
         <div class="col-5">
           <h2>Art Preview</h2>
-          <img src="static/img/file.png" width="460" height="460" alt="preview" />
+          <img src="static/img/file.png" id="art_preview" width="460" height="460" alt="preview" />
           <a href="/static/img/file.png" download="converted_image" class="btn main_btn" id="prim2">DOWNLOAD</a>
-          <a href="https://vk.com/" class="btn sec_btn" id="sec2">SHARE ON SOCIAL MEDIA</a>
+          <a href="https://vk.com/" class="btn sec_btn" id="sec2" >SHARE ON SOCIAL MEDIA</a>
         </div>
+          <div id="testing"> </div>
       </div>
     </div>
   </form>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+          crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).on('submit','#todo-form', function(e) {
+      e.preventDefault();
+      var data = $(this).serialize();
+      $.ajax({
+        type:'POST',
+        data: data,
+        success: function(result) {
+            var $img = $("#art_preview");
+            $img.attr("src", $img.attr("src").split("?")[0] + "?" + Math.random());
+<!--            alert(result);-->
+        },
+        error: function() {
+          alert('Error');
+        }
+      })
+    });
+  </script>
 </div>
 {% endblock %}

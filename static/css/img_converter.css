@@ -15,15 +15,27 @@ h3 {
     font-family: 'Montserrat';
     font-size: 20px;
     margin-top: 10px;
-
 }
-[type=checkbox] {
+
+
+[id^=radio-] {
   display: none;
 }
 
-[type=checkbox]:checked + img {
-  border: 2px solid white;
+[id^=radio-] + label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 50px;
+  color: #555;
+  cursor: pointer;
 }
+
+[id^=radio-]:checked + label {
+  border: 2px solid white;
+  cursor: text;
+}
+
+
 .btn {
     color: white;
 	font-size: 17px;
