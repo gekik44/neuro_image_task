@@ -7,8 +7,11 @@ h2 {
     font-family: 'Montserrat';
     font-weight: 600;
     font-size: 35px;
-    margin-top: 50px;
+    margin-top: 20px;
 
+}
+#first{
+    margin-top: 0px;
 }
 h3 {
     color: black;
@@ -16,7 +19,6 @@ h3 {
     font-size: 20px;
     margin-top: 10px;
 }
-
 
 [id^=radio-] {
   display: none;
@@ -28,6 +30,12 @@ h3 {
   font-size: 50px;
   color: #555;
   cursor: pointer;
+}
+.section {
+  margin-top: 20px;
+  height: 500px;
+  overflow-y: auto;
+  scroll-snap-type: y;
 }
 
 [id^=radio-]:checked + label {

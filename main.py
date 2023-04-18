@@ -37,8 +37,8 @@ def img_converter():
             content_image_path = f"static/img/{image}.jpg"
             if image == 'content_image_3':
                 with open("static/txt/links_content.txt") as file:
-                    line = file.read().split()
-                content_image_path = random.choice(line)
+                    lines = file.read().split()
+                content_image_path = random.choice(lines)
             if style == 'image_style_7':
                 with open("static/txt/links_style.txt") as file:
                     lines = file.read().split()
@@ -50,7 +50,7 @@ def img_converter():
 
 if __name__ == '__main__':
     db_session.global_init("db/users.db")
-    image = Image.new(mode="RGB", size=(256, 256), color="#452E1D")
+    image = Image.new(mode="RGB", size=(460, 460), color="#452E1D")
     image.save("static/img/file.png")
     # user = User()
     # user.username = "Gelik4na4"
