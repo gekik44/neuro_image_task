@@ -64,11 +64,17 @@ def convert_image(image_content, image_style, content_blending_ratio=0.5):
     # Define content blending ratio between [0..1].
     # 0.0: 0% style extracts from content image.
     # 1.0: 100% style extracted from content image.
+    content_path = image_content
+    style_path = image_style
 
-    # content_path = tf.keras.utils.get_file('belfry.jpg', 'https://storage.googleapis.com/khanhlvg-public.appspot.com/arbitrary-style-transfer/belfry-2611573_1280.jpg')
-    # style_path = tf.keras.utils.get_file('style23.jpg', 'https://storage.googleapis.com/khanhlvg-public.appspot.com/arbitrary-style-transfer/style23.jpg')
-    content_path = f'static/img/{image_content}'
-    style_path = f'static/img/{image_style}'
+    if "https://" in image_content:
+        content_name = image_content.split('/')[-1]
+        content_path = tf.keras.utils.get_file(content_name, image_content)
+
+    if "https://" in image_style:
+        style_name = image_style.split('/')[-1]
+        style_path = tf.keras.utils.get_file(style_name, image_style)
+
 
     # Load the input images.
     content_image = load_image(content_path)
