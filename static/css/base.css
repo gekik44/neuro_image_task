@@ -22,7 +22,8 @@ header {
     background:#46372B;
     border: 2px solid white;
 	padding: 10px 20px;
-	width: 100px;
+	width: 160px;
+	border-radius: 0;
 	transition: all 0.5s ease;
 	margin: auto;
 }

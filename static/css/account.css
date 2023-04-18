@@ -1,0 +1,42 @@
+body{
+    background-color: #D0B8A8;
+    margin: 0;
+}
+h2 {
+    color: black;
+    font-family: 'Bebas Neue';
+    font-size: 50px;
+    margin-top: 50px;
+    text-align: center;
+
+}
+h3 {
+    color: black;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    margin-top: 10px;
+}
+table{
+    border-spacing: 20px;
+    border-collapse: separate;
+    margin: auto;
+}
+.circle-image{
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin-top: 50px;
+  border: 4px solid white;
+}
+.circle-image img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.col{
+    background-color: #F4E1D5;
+    text-align: center;
+    margin-left: -100px;
+}

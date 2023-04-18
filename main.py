@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from neuro import convert_image
 from data import db_session
+import random
 from data.users import User
 from flask_sqlalchemy import SQLAlchemy
 
@@ -16,11 +17,11 @@ def index():
     return render_template("index.html", title="start")
 
 @app.route("/authorization")
-def account():
+def authorization():
     return render_template("authorization.html", title="authorization")
-# @app.route("/account")
-# def account():
-#     return render_template("account.html", title="account")
+@app.route("/account")
+def account():
+    return render_template("account.html", title="account")
 @app.route("/img_converter", methods=["GET", "POST"])
 def img_converter():
     if request.method == "GET":
@@ -50,6 +51,12 @@ def img_converter():
                 convert_image(content_image, "image_style_5.jpg", content_blending_ratio)
             elif style == 'image_style_6':
                 convert_image(content_image, "image_style_6.jpg", content_blending_ratio)
+            elif style == 'image_style_7':
+                with open("links_style.txt") as file:
+                    lines = file.readlines()
+                random_line = random.choice(lines)[:-1]
+                print(random_line)
+                convert_image(content_image, "random_line", content_blending_ratio)
         return render_template("img_converter.html", title="converter")
     return render_template("img_converter.html", title="converter")
 

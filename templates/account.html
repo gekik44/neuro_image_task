@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block css %}
+  <link rel="stylesheet" href="static/css/account.css">
+{% endblock %}
+
+{% block main %}
+<div class="container">
+      <div class="row">
+        <div class="col">
+          <span class="circle-image">
+            <img src="static/img/content1.svg"/>
+          </span>
+          <h3>@username</h3>
+        </div>
+        <div class="col-9">
+          <h2>Projects</h2>
+          <table>
+            <tbody>
+                <tr>
+                    <td>
+                      <label>
+                        <img src="static/img/2.svg"  width="256" height="256" alt="image style" />
+                      </label>
+                    </td>
+                    <td>
+                      <label>
+                        <img src="static/img/3.svg" width="256" height="256" alt="image style" />
+                      </label>
+                    </td>
+                    <td>
+                      <label>
+                        <img src="static/img/4.svg" width="256" height="256" alt="image style" />
+                      </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      <label>
+                        <img src="static/img/5.svg" width="256" height="256" alt="image style" />
+                      </label>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
