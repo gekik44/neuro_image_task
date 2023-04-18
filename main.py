@@ -35,6 +35,10 @@ def img_converter():
 
             image_style_path = f"static/img/{style}.jpg"
             content_image_path = f"static/img/{image}.jpg"
+            if image == 'content_image_3':
+                with open("static/txt/links_content.txt") as file:
+                    line = file.read().split()
+                content_image_path = random.choice(line)
             if style == 'image_style_7':
                 with open("static/txt/links_style.txt") as file:
                     lines = file.read().split()
@@ -55,7 +59,8 @@ if __name__ == '__main__':
     # db_sess = db_session.create_session()
     # db_sess.add(user)
     # db_sess.commit()
-    app.run(host='192.168.0.100', port=8080)
+    app.run()
+    #app.run(host='192.168.0.100', port=8080)
 
 
 
