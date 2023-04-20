@@ -1,7 +1,8 @@
-body{
+body {
     background-color: #D0B8A8;
     margin: 0;
 }
+
 h2 {
     color: black;
     font-family: 'Montserrat';
@@ -10,9 +11,11 @@ h2 {
     margin-top: 20px;
 
 }
-#first{
+
+#first {
     margin-top: 0px;
 }
+
 h3 {
     color: black;
     font-family: 'Montserrat';
@@ -27,22 +30,35 @@ h3 {
 [id^=radio-] + label {
   display: inline-block;
   vertical-align: middle;
-  font-size: 50px;
+  font-size: 0px;
   color: #555;
   cursor: pointer;
 }
+
 .section {
   margin-top: 20px;
   height: 500px;
   overflow-y: auto;
   scroll-snap-type: y;
 }
+p{
+    margin-top:15px;
+}
+.link {
+  outline: none;
+  text-decoration: none;
+  color: white;
+}
+
+.link:hover {
+  border-bottom: 2px solid white;
+}
+
 
 [id^=radio-]:checked + label {
   border: 2px solid white;
   cursor: text;
 }
-
 
 .btn {
     color: white;
@@ -55,20 +71,22 @@ h3 {
 	transition: all 0.5s ease;
 	margin-top: 10px;
 }
-.sec_btn{
+.sec_btn {
     border: 2px solid white;
 }
+
 .sec_btn:hover {
 	background: white;
     color: black;
 }
 
-.main_btn{
+.main_btn {
 	font-weight: 600;
     text-align: center;
 	background: #A15DB9;
 }
-#primary{
+
+#primary {
     margin-bottom: 100px;
 }
 
@@ -76,17 +94,29 @@ h3 {
 	background: white;
     color: black;
 }
+
 .col-5 {
   text-align: center;
 }
 
-#volume{
+#volume {
     width: 460px;
 }
-h4{
+
+h4 {
     color: black;
     font-family: 'Montserrat';
     font-size: 15px;
     text-align:center;
     margin-top:5px;
 }
+
+input.invisible {
+  opacity: 0;
+  height: 0px;
+  width: 0px;
+  right: 0px;
+  top: 0px;
+}
+
+

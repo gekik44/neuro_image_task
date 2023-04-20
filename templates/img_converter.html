@@ -4,8 +4,9 @@
 {% endblock %}
 
 {% block main %}
+
 <div>
-  <form method="post" id="todo-form">
+  <form method="post" enctype="multipart/form-data" id="todo-form">
     <div class="container">
       <div class="row">
         <div class="col section">
@@ -14,7 +15,7 @@
             <tbody>
                 <tr>
                     <td>
-                      <input type="radio" id="radio-1" name="radiostyle" value="image_style_1"/>
+                      <input type="radio" id="radio-1" name="radiostyle" value="image_style_1" checked/>
                       <label for="radio-1">
                         <img src="static/img/1.svg" alt="image style"/>
                       </label>
@@ -80,7 +81,7 @@
             <tbody>
               <tr>
                 <td>
-                  <input type="radio" id="radio-9" name="radioimage" value="content_image_1"/>
+                  <input type="radio" id="radio-9" name="radioimage" value="content_image_1" checked/>
                   <label for="radio-9">
                       <img src="static/img/content1.svg" alt="image" />
                   </label>
@@ -101,7 +102,7 @@
                   <h4>random image</h4>
                 </td>
                 <td>
-                  <input type="radio" id="radio-12" name="radiostyle" value="content_image_4"/>
+                  <input type="radio" id="radio-12" name="radioimage" value="content_image_4" />
                   <label for="radio-12">
                     <img src="static/img/8.svg" alt="image" />
                   </label>
@@ -121,11 +122,17 @@
           <img src="static/img/file.png" id="art_preview" width="460" height="460" alt="preview" />
           <a href="/static/img/file.png" download="converted_image" class="btn main_btn" id="prim2">DOWNLOAD</a>
           <a href="#" class="btn sec_btn" >SAVE TO PROFILE</a>
-          <p><a href="https://vk.com/">share on social media</a></p>
+          <p><a href="https://vk.com/" class="link">share on social media</a></p>
         </div>
       </div>
     </div>
+    <div>
+      <input type="file" class="invisible" id="upload_style" accept="image/jpeg" name="upload_style"/>
+      <input type="file" class="invisible" id="upload_content"  accept="image/jpeg" name="upload_content"/>
+    </div>
   </form>
+
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.js"
           integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -133,20 +140,38 @@
   <script type="text/javascript">
     $(document).on('submit','#todo-form', function(e) {
       e.preventDefault();
-      var data = $(this).serialize();
+      let data = $(this).serialize();
       $.ajax({
         type:'POST',
         data: data,
         success: function(result) {
+<!--            alert('AJAX');-->
             var $img = $("#art_preview");
             $img.attr("src", $img.attr("src").split("?")[0] + "?" + Math.random());
-<!--            alert(result);-->
         },
         error: function() {
           alert('Error');
         }
       })
     });
+  </script>
+
+  <script>
+    document.getElementById("radio-12").onchange = openDialogImage12;
+
+    function openDialogImage12() {
+      var type = document.getElementById("radio-12");
+      document.querySelector('input[name="upload_content"]').click();
+    }
+  </script>
+
+  <script>
+    document.getElementById("radio-8").onchange = openDialogImage8;
+
+    function openDialogImage8(event) {
+      var type = document.getElementById("radio-8");
+      document.querySelector('input[name="upload_style"]').click();
+    }
   </script>
 </div>
 {% endblock %}
