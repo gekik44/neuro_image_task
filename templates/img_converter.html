@@ -132,14 +132,21 @@
     </div>
   </form>
 
-
-
   <script src="https://code.jquery.com/jquery-3.5.1.js"
           integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
           crossorigin="anonymous"></script>
   <script type="text/javascript">
     $(document).on('submit','#todo-form', function(e) {
       e.preventDefault();
+
+<!--      Отправка файлов с input, чтобы сохранить на сервере-->
+      const form = document.querySelector('#todo-form');
+      const formData = new FormData(form);
+      fetch('/upload', {
+        method: 'POST',
+        body: formData
+      })
+
       let data = $(this).serialize();
       $.ajax({
         type:'POST',
@@ -169,8 +176,8 @@
     document.getElementById("radio-8").onchange = openDialogImage8;
 
     function openDialogImage8(event) {
-      var type = document.getElementById("radio-8");
-      document.querySelector('input[name="upload_style"]').click();
+        var type = document.getElementById("radio-8");
+        document.querySelector('input[name="upload_style"]').click();
     }
   </script>
 </div>

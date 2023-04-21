@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from neuro import convert_image
 from data import db_session
 import random
+import time
 from PIL import Image
 from data.users import User
 from flask_sqlalchemy import SQLAlchemy
@@ -39,31 +40,36 @@ def img_converter():
             image = request.form['radioimage']
             content_blending_ratio = 1 - float(request.form['content_blending_ratio'])
 
+            if style == "image_style_8" or image == 'content_image_4':
+                time.sleep(1) # Сон на 1 секунду, чтобы изображения успели загрузиться
+
             image_style_path = f"static/img/{style}.jpg"
             content_image_path = f"static/img/{image}.jpg"
             if image == 'content_image_3':
                 with open("static/txt/links_content.txt") as file:
                     lines = file.read().split()
                 content_image_path = random.choice(lines)
-            elif image == 'content_image_4':
-                image_file = request.files["upload_content"]
-                with open("static/img/upload_content.jpg", 'wb') as file:
-                    file.write(image_file.read())
-                content_image_path = f"static/img/upload_content.jpg"
 
             if style == 'image_style_7':
                 with open("static/txt/links_style.txt") as file:
                     lines = file.read().split()
                 image_style_path = random.choice(lines)
-            elif style == 'image_style_8':
-                image_file = request.files["upload_style"]
-                with open("static/img/upload_style.jpg", 'wb') as file:
-                    file.write(image_file.read())
-                image_style_path = f"static/img/upload_style.jpg"
 
             convert_image(content_image_path, image_style_path, content_blending_ratio)
         return render_template("img_converter.html", title="converter")
     return render_template("img_converter.html", title="converter")
+
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    print(request.files)
+    style = request.files['upload_style']
+    if style:
+        style.save("static/img/image_style_8.jpg")
+    image = request.files['upload_content']
+    if image:
+        image.save("static/img/content_image_4.jpg")
+    return "200"
 
 
 if __name__ == '__main__':
